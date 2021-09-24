@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../UI/Button';
 import Card from '../UI/Card';
 // Extension need to be added for non js file
 import classes from './AddUser.module.css';
@@ -17,7 +18,7 @@ const AddUser = props => {
                 {/* We can't use " for " with JSX, we need to use htmlFor instead */}
                 <label htmlFor="age">Age (Years)</label>
                 <input id="age" type="number"></input>
-                <button type="submit">Add User</button>
+                <Button type="submit">Add User</Button>
             </form>
         </Card>
     );
