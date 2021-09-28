@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
+import ErrorModal from "../UI/ErrorModal";
 // Extension need to be added for non js file
 import classes from "./AddUser.module.css";
 
@@ -31,27 +32,30 @@ const AddUser = (props) => {
   };
 
   return (
-    <Card className={classes.input}>
-      {/*Don't forget, we don't want to execute the fonction here, we only want to execute it*/}
-      <form onSubmit={addUserHandler}>
-        <label htmlFor="username">Username</label>
-        <input
-          id="username"
-          type="text"
-          value={enteredUsername}
-          onChange={usernameChangeHandler}
-        />
-        {/* We can't use " for " with JSX, we need to use htmlFor instead */}
-        <label htmlFor="age">Age (Years)</label>
-        <input
-          id="age"
-          type="number"
-          value={enteredAge}
-          onChange={ageChangeHandler}
-        />
-        <Button type="submit">Add User</Button>
-      </form>
-    </Card>
+    <div>
+      <ErrorModal title="An error occured" message="Something went wrong!" />
+      <Card className={classes.input}>
+        {/*Don't forget, we don't want to execute the fonction here, we only want to execute it*/}
+        <form onSubmit={addUserHandler}>
+          <label htmlFor="username">Username</label>
+          <input
+            id="username"
+            type="text"
+            value={enteredUsername}
+            onChange={usernameChangeHandler}
+          />
+          {/* We can't use " for " with JSX, we need to use htmlFor instead */}
+          <label htmlFor="age">Age (Years)</label>
+          <input
+            id="age"
+            type="number"
+            value={enteredAge}
+            onChange={ageChangeHandler}
+          />
+          <Button type="submit">Add User</Button>
+        </form>
+      </Card>
+    </div>
   );
 };
 
