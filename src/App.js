@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import AddUser from './components/Users/AddUser';
 import UsersList from './components/Users/UsersList';
-import Card from './components/UI/Card';
 
 function App() {
   // setUsersList will allow us to change the value of the empty array  
@@ -16,7 +15,7 @@ function App() {
   return (
     <div>
       <AddUser onAddUser={addUserHandler} />
-      <Card><UsersList users={usersList} /></Card>
+      <UsersList users={usersList} />
     </div>
   );
 }
